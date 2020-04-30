@@ -20,7 +20,7 @@ class MoreInfoSwitch extends LitElement {
   @property() public stateObj?: HassEntity;
 
   
-  constructor() {
+  constructor(){
     super();
     this._wdn = ["M","T","W","T","F","S","S"];
   }
@@ -521,10 +521,10 @@ class MoreInfoSwitch extends LitElement {
 
     Convert cDown time to Tasmota PulseTime1
     
-    i = 0 - Time in sec Tasmota PulseTime1
-    i = 1 - Tasmota PulseTime1 To Time
+    i = 0 - Time to Tasmota PulseTime1
+    i = 1 - Tasmota PulseTime1 to Time
 		i = 2 - Force seconds to 0
-    i = 3 - Time so sec
+    i = 3 - Time to sec
     i = 4 - Sec to Time
   *******************************************************/
   conv_tas(i, d){
@@ -539,7 +539,7 @@ class MoreInfoSwitch extends LitElement {
         }else if(a.length == 3){
           r = ( (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]) );
         }
-        if(r<=1){
+        if(r==0){
           
         }else if(r<12){
           r = r * 10;
@@ -552,9 +552,9 @@ class MoreInfoSwitch extends LitElement {
         
       }else if(i==1){
         
-        if(d<=1){
+        if(d==0){
 
-        }else if(d<111){
+        }else if(d<=111){
           d = d/10;
         }else if(d>111){
           d = d - 100;
