@@ -1,0 +1,3 @@
+/common/const.ts
+/dialogs/more-info/controls/more-info-switch.ts
+/dialogs/more-info/controls/more-info-content.js
